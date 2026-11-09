@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header, ActiveNavTab } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { LandingHero } from './components/landing/LandingHero';
+import { DesignOverview } from './components/home/DesignOverview';
 import { AIShoppingAgent } from './components/ai/AIShoppingAgent';
 import { DealAnalyzerView } from './components/dealAnalyzer/DealAnalyzerView';
 import { CategoriesView } from './components/categories/CategoriesView';
@@ -1446,6 +1447,7 @@ export default function App() {
         {/* 1. HOMEPAGE: DEALMATE 3D CINEMATIC HERO */}
         {currentTab === 'home' && (
           <section className="container w-full max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto">
+              <DesignOverview onStartShopping={(query) => handleStartAIShoppingWithQuery(query)} />
             <LandingHero
               onStartNegotiating={handleStartNegotiatingTab}
               onLaunchDemo={handleLaunchEarbudsDemo}
